@@ -249,7 +249,670 @@ fieldset {
   border: 0;
 }
 
-p {
-  background-color: red;
+/*
+**
+** outline
+** header
+** gnav
+** footer
+** pagetop
+** main common
+** top
+**
+*/
+
+/*
+（余白の）単位の使い分け
+
+その文字の大きさに比例して、余白も拡大・縮小 => em
+親要素の横幅に比例して、（同上） => ％
+ブラウザの横幅に比例して、（同上） => vw
+何ものにも影響をうけたくない、固定 => px
+
+*/
+
+/*==================================================
+
+** outline
+==================================================*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "\30D2\30E9\30AE\30CE\89D2\30B4   Pro W3", Meiryo, メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif;
+  color: #333;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+  left: 0;
+  transition: left linear 0.2s;
+}
+
+body.is-active-gnav {
+  left: -240px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.wrap {
+  padding: 0 5%;
+}
+
+@media screen and (min-width: 1025px) {
+  .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+/*==================================================
+
+** header
+==================================================*/
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: left linear 0.2s;
+}
+
+.is-active-gnav .header {
+  left: -240px;
+}
+
+.header .header-top {
+  background-color: #ff7f50;
+  height: 64px;
+  position: relative;
+}
+
+.header .header-top .wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header .header-top__logo {
+  width: 180px;
+  line-height: 1;
+  transition: opacity ease-out 0.2s;
+}
+
+.header .header-top__logo:hover {
+  opacity: 0.8;
+}
+
+.header .menu-btn {
+  width: 64px;
+  height: 64px;
+  background-color: #ff7f50;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.header .menu-btn span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform linear 0.2s, margin-top linear 0.2s;
+}
+
+.header .menu-btn span:nth-child(1) {
+  margin-top: -7px;
+}
+
+.header .menu-btn span:nth-child(3) {
+  margin-top: 7px;
+}
+
+.is-active-gnav .header .menu-btn span:nth-child(1) {
+  margin-top: 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.is-active-gnav .header .menu-btn span:nth-child(2) {
+  display: none;
+}
+
+.is-active-gnav .header .menu-btn span:nth-child(3) {
+  margin-top: 0;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media screen and (min-width: 1025px) {
+  .header .header-top {
+    height: 60px;
+  }
+
+  .header .header-top .wrap {
+    justify-content: center;
+  }
+
+  .header .menu-btn {
+    display: none;
+  }
+}
+
+/*==================================================
+
+** gnav
+==================================================*/
+
+.gnav {
+  width: 240px;
+  height: 100vh;
+  background-color: #202020;
+  position: fixed;
+  top: 0;
+  right: -240px;
+  transition: right linear 0.2s;
+}
+
+.is-active-gnav .gnav {
+  right: 0;
+}
+
+.gnav .wrap {
+  padding: 0;
+}
+
+.gnav__list {
+  margin-top: 20px;
+}
+
+.gnav__item {
+  color: #fff;
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+}
+
+.gnav__item a {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .gnav {
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    position: static;
+  }
+
+  .gnav__list {
+    display: flex;
+    margin-top: 0;
+  }
+
+  .gnav__item {
+    width: calc(100% / 5);
+    border: none;
+  }
+
+  .gnav__item a {
+    text-align: center;
+    transition: background-color ease-out 0.3s;
+  }
+
+  .gnav__item a:hover {
+    background-color: #333;
+  }
+}
+
+/*==================================================
+
+** footer
+==================================================*/
+
+.footer {
+  margin-top: 100px;
+  padding: 27px 0;
+  background-color: #202020;
+}
+
+.footer .copyright {
+  color: #bbbbbb;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/*==================================================
+
+** pagetop
+==================================================*/
+
+.pagetop {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 127, 80, 0.9);
+  text-align: center;
+  position: fixed;
+  right: 20px;
+  bottom: 82px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.pagetop i {
+  color: #fff;
+  font-size: 28px;
+  line-height: 49px;
+}
+
+/*==================================================
+
+** main common
+==================================================*/
+
+.main {
+  padding-top: 64px;
+}
+
+.main p + p {
+  margin-top: 15px;
+}
+
+.main .p18 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.main .p14 {
+  color: #999;
+  font-size: 1.4rem;
+}
+
+.main ul {
+  margin-top: 35px;
+}
+
+.main ul li {
+  padding-left: 1em;
+  position: relative;
+}
+
+.main ul li::before {
+  content: "\F105";
+  color: #ff7f50;
+  font-family: "FontAwesome";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.main ul li + li {
+  margin-top: 0.625em;
+}
+
+.main ul.noicon li {
+  padding-left: 0;
+}
+
+.main ul.noicon li::before {
+  content: none;
+}
+
+.main table {
+  width: 100%;
+  margin-top: 35px;
+}
+
+.main table tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.main table tr:first-child {
+  border-top: 1px solid #ccc;
+}
+
+.main table th,
+.main table td {
+  display: block;
+  text-align: justify;
+}
+
+.main table th {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.main table td {
+  padding-bottom: 25px;
+}
+
+.main .page-title h1 {
+  position: relative;
+  color: #333;
+  margin: 47px 0;
+  text-shadow: 0 0 2px white;
+  text-align: center;
+  font-size: 3.2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+
+.main .page-title h1:before {
+  content: "";
+  position: absolute;
+  background: #ffd69d;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.main .page-title h1:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 30px auto 0;
+  background-color: #ff7f50;
+}
+
+.main h2,
+.main h3,
+.main h4,
+.main h5,
+.main h6 {
+  color: #FF6928;
+  font-weight: bold;
+}
+
+.main h2 {
+  margin-top: 80px;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.main h2 + * {
+  margin-top: 50px;
+}
+
+.main h3 {
+  margin-top: 65px;
+  font-size: 2.2rem;
+}
+
+.main h3 + * {
+  margin-top: 35px;
+}
+
+.main h4 {
+  margin-top: 50px;
+  font-size: 2rem;
+}
+
+.main h4 + * {
+  margin-top: 30px;
+}
+
+.main h5 {
+  margin-top: 40px;
+  font-size: 1.8rem;
+}
+
+.main h5 + * {
+  margin-top: 25px;
+}
+
+.main h6 {
+  margin-top: 30px;
+}
+
+.main h6 + * {
+  margin-top: 20px;
+}
+
+.main a {
+  color: #555555;
+}
+
+.main a:hover {
+  text-decoration: underline;
+}
+
+.main .button {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 50px auto 0;
+  padding: 0.844em 1em;
+  color: #ffffff;
+  background-color: #FF570D;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.6;
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.main .button:hover {
+  background-color: #ff6521;
+  text-decoration: none;
+  box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 769px) {
+  .main table th,
+  .main table td {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .main table th {
+    width: 220px;
+    padding-bottom: 25px;
+  }
+
+  .main table td {
+    padding-top: 25px;
+    padding-left: 1.5em;
+  }
+
+  .main .page-title h1 {
+    font-size: 4rem;
+  }
+
+  .main h2 {
+    font-size: 2.8rem;
+  }
+
+  .main .button {
+    max-width: 240px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .main {
+    padding-top: 100px;
+  }
+
+  .main .page-title h1 {
+    font-size: 5rem;
+  }
+
+  .main h2 {
+    margin-top: 90px;
+  }
+
+  .main h3 {
+    margin-top: 75px;
+  }
+
+  .main h4 {
+    margin-top: 55px;
+  }
+}
+
+/*==================================================
+
+** top
+==================================================*/
+
+#top .mainslider {
+  overflow: hidden;
+}
+
+#top .mainslider p {
+  margin-top: 0 !important;
+}
+
+#top .slick-slider {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+#top .slick-list {
+  overflow: visible;
+}
+
+#top .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  height: 55px;
+  width: 45px;
+  background-color: #333333;
+  color: #ffffff;
+  border: medium solid #333333;
+}
+
+#top .angle-size {
+  font-size: 30px;
+}
+
+#top .slick-prev {
+  left: 0;
+}
+
+#top .slick-next {
+  right: 0;
+}
+
+#top .section-title--en {
+  font-size: 3rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#top .concept__text {
+  width: 75%;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+#top .services__item {
+  display: flex;
+  flex-direction: column;
+}
+
+#top .services__item:not(:first-child) {
+  margin-top: 45px;
+}
+
+#top .services__item__title {
+  margin-top: 20px;
+  text-align: center;
+  order: 1;
+}
+
+#top .services__item__img-box {
+  margin-top: 0;
+  order: 0;
+}
+
+#top .news__item {
+  display: flex;
+  flex-direction: column;
+}
+
+#top .news__item:not(:first-child) {
+  margin-top: 30px;
+}
+
+#top .news__item__title {
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 769px) {
+  #top .services__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #top .services__item {
+    width: 31.2%;
+  }
+
+  #top .services__item:not(:first-child) {
+    margin-top: 0;
+  }
+
+  #top .news__item {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  #top .news__item:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  #top .news__item__title {
+    width: calc(100% - 140px);
+    margin-top: 0;
+  }
+}
+
+/*==================================================
+
+** about
+==================================================*/
+
+#about .outline ul {
+  margin-top: 0;
+}
+
+#about .access__map {
+  height: 450px;
+  width: 100%;
 }
 

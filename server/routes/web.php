@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/sample', function () {
+    return view('contents/sample');
+});
+
 Route::get('/', function () {
-    return view('contents/welcome');
+    return view('contents/index');
+});
+
+Route::get('/info', function () {
+    return view('contents/info');
+});
+
+Route::get('/search', function () {
+    return view('contents/search');
+});
+
+Route::get('/admin', function () {
+    return view('admin/adminIndex');
 });

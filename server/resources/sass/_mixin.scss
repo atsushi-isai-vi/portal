@@ -1,0 +1,48 @@
+$color-txt: #333;
+$color-sub-txt: #999;
+$color-main: #ff7f50;
+$color-accent: #202020;
+$color-border: #ccc;
+$color-word: #FF6928;
+
+$font-en: 'Open Sans', sans-serif;
+$font-jp: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+
+$gnav-width: 240px;
+
+// pcのみ
+@mixin break-pc {
+	@media screen and (min-width:1025px) {
+		@content;
+	}
+}
+// pcとtab共通
+@mixin break-pc-tab {
+	@media screen and (min-width:769px) {
+		@content;
+	}
+}
+// tabとsp共通
+@mixin break-tab-sp {
+	@media screen and (max-width:1024px) {
+		@content;
+	}
+}
+// tabのみ
+@mixin break-tab {
+	@media screen and (max-width:1024px) and (min-width:769px) {
+		@content;
+	}
+}
+// spのみ
+@mixin break-sp {
+	@media screen and (max-width:768px) {
+		@content;
+	}
+}
+// sp (小）のみ
+@mixin break-sp-s {
+	@media screen and (max-width:374px) {
+		@content;
+	}
+}
