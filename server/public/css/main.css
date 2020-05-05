@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+/*==================================================
+
+fonts
+==================================================*/
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-style: normal;
+  src: url(/fonts/OpenSans-Regular.eot?07d1a425ccbad19329db2f72d12c4233);
+  /* IE9 Compat Modes */
+  src: url(/fonts/OpenSans-Regular.woff2?3fe9453ce4510be312bfb058229c84c8) format("woff2"), url(/fonts/OpenSans-Regular.woff?c85603a140ca21c2aa8e9c9b3163857f) format("woff"), url(/fonts/OpenSans-Regular.ttf?3ed9575dcc488c3e3a5bd66620bdf5a4) format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-style: normal;
+  src: url(/fonts/OpenSans-SemiBold.eot?9b5d357fe4cf2efd4897da122ceb6d6b);
+  /* IE9 Compat Modes */
+  src: url(/fonts/OpenSans-SemiBold.woff2?90ede1c92da1094d3aae596d6f7946b8) format("woff2"), url(/fonts/OpenSans-SemiBold.woff?6f98c00fed110a555cdadb68768103ef) format("woff"), url(/fonts/OpenSans-SemiBold.ttf?ba5cde21eeea0d57ab7efefc99596cce) format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-style: normal;
+  src: url(/fonts/OpenSans-Bold.eot?1025a6e0fb0fa86f17f57cc82a6b9756);
+  /* IE9 Compat Modes */
+  src: url(/fonts/OpenSans-Bold.woff2?1025a6e0fb0fa86f17f57cc82a6b9756) format("woff2"), url(/fonts/OpenSans-Bold.woff?1025a6e0fb0fa86f17f57cc82a6b9756) format("woff"), url(/fonts/OpenSans-Bold.ttf?1025a6e0fb0fa86f17f57cc82a6b9756) format("truetype");
+}
+
+/*==================================================
+
+sectioning
+==================================================*/
+
+/*	outline	*/
+
+html {
+  font-size: 62.5%;
+  /* 10px */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  /* デザインに合わせて変更する */
+}
+
+p,
+blockquote,
+address,
+small,
+dt,
+dd,
+li,
+th,
+td,
+td,
+span {
+  line-height: 1.8;
+  /* デザインに合わせて変更する */
+}
+
+div {
+  line-height: 1;
+}
+
+/*	heading	*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  font-weight: normal;
+  font-size: 100%;
+  line-height: 1.6;
+  /* デザインに合わせて変更する */
+}
+
+/*==================================================
+
+link
+==================================================*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*==================================================
+
+content
+==================================================*/
+
+/*	text	*/
+
+p,
+blockquote {
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+/*	list	*/
+
+ol,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+/*	table	*/
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0;
+}
+
+th {
+  font-weight: normal;
+}
+
+/*	embed	*/
+
+img {
+  vertical-align: bottom;
+  border: 0;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+/*	semantics	*/
+
+ruby,
+rt,
+mark,
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+small {
+  font-size: 100%;
+}
+
+em,
+cite,
+dfn,
+i {
+  font-style: normal;
+}
+
+strong,
+b {
+  font-weight: normal;
+}
+
+ins,
+del {
+  text-decoration: none;
+}
+
+q {
+  quotes: none;
+}
+
+sup,
+sub {
+  vertical-align: baseline;
+}
+
+ruby,
+rt,
+mark {
+  line-height: 100%;
+}
+
+mark {
+  background: none;
+}
+
+/*==================================================
+
+form
+==================================================*/
+
+form {
+  margin: 0;
+}
+
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-size: 1.6rem;
+}
+
+select {
+  line-height: 100%;
+  font-weight: normal;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+p {
+  background-color: red;
+}
+
