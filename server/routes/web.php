@@ -21,8 +21,16 @@ Route::get('/', function () {
     return view('contents/index');
 });
 
-Route::get('/info', function () {
-    return view('contents/info');
+Route::get('/wiki', function () {
+    return view('contents/wiki');
+});
+
+Route::get('/blog', function () {
+    return view('contents/blog');
+});
+
+Route::get('/setting', function () {
+    return view('contents/setting');
 });
 
 Route::get('/search', function () {

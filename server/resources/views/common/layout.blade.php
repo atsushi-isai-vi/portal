@@ -39,11 +39,11 @@
 
         <nav class="gnav">
             <ul class="gnav__list wrap">
-            <li class="gnav__item"><a href="#">information</a></li>
-            <li class="gnav__item"><a href="#">search</a></li>
-            <li class="gnav__item"><a href="#">blog</a></li>
-            <li class="gnav__item"><a href="#">wiki</a></li>
-            <li class="gnav__item"><a href="#">setting</a></li>
+            <li class="gnav__item"><a href="/">information</a></li>
+            <li class="gnav__item"><a href="/search">search</a></li>
+            <li class="gnav__item"><a href="/blog">blog</a></li>
+            <li class="gnav__item"><a href="/wiki">wiki</a></li>
+            <li class="gnav__item"><a href="/setting">setting</a></li>
             </ul>
         </nav><!-- /gnav -->
         </header>
